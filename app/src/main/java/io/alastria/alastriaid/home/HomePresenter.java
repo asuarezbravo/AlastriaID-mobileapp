@@ -1,15 +1,7 @@
 package io.alastria.alastriaid.home;
 
 
-import android.content.Context;
-import android.os.Environment;
-
-
-import java.io.File;
-import java.util.stream.Stream;
-
-import io.alastria.alastriaid.modelo.Modelo;
-import io.alastria.alastriaid.modelo.Persona;
+import io.alastria.alastriaid.model.Model;
 
 /**
  * Created by Alvaro Suarez on 05/10/2017.
@@ -18,7 +10,7 @@ import io.alastria.alastriaid.modelo.Persona;
 public class HomePresenter implements HomeContract.Presenter {
 
     private HomeContract.View mHomeView;
-    private Modelo mModelo;
+    private Model mModel;
 
     public HomePresenter(HomeContract.View homeView) {
         mHomeView = homeView;
@@ -26,7 +18,7 @@ public class HomePresenter implements HomeContract.Presenter {
 
     @Override
     public void start() {
-        mModelo = Modelo.getInstance();
-        mHomeView.mostrarDatosUsuario(mModelo.getPersona().getNombre(), mModelo.getPersona().getApellidos(), mModelo.getPersona().getEmail());
+        mModel = Model.getInstance();
+        mHomeView.displayProfile(mModel.getPerson().getFirstName(), mModel.getPerson().getLastName(), mModel.getPerson().getEmail());
     }
 }

@@ -29,8 +29,8 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
     }
 
     @Override
-    public void mostrarDatosUsuario(String nombre, String apellidos, String email){
-        ((TextView) findViewById(R.id.nombreUsuario)).setText(nombre + " " + apellidos);
+    public void displayProfile(String firstName, String lastName, String email){
+        ((TextView) findViewById(R.id.nombreUsuario)).setText(firstName + " " + lastName);
         ((TextView) findViewById(R.id.emailUsuario)).setText(email);
     }
 }

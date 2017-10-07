@@ -10,7 +10,7 @@ import io.alastria.alastriaid.BaseView;
 public interface HomeContract {
 
     interface View extends BaseView<Presenter> {
-        void mostrarDatosUsuario(String nombre, String apellidos, String email);
+        void displayProfile(String nombre, String apellidos, String email);
     }
 
     interface Presenter extends BasePresenter {
