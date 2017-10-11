@@ -1,9 +1,15 @@
 <resources>
     <string name="app_name">Alastria ID</string>
 
+    <string name="loginTitle">Acceso</string>
     <string name="loginPlaceholderEmail">Enter your email</string>
     <string name="loginPlaceholderPIN">Enter your PIN</string>
     <string name="loginBtnLogin">Sign in</string>
     <string name="loginBtnRegister">Register</string>
     <string name="loginLblObtainPIN">I don\'t have a PIN</string>
+
+    <string name="registerTitle">Registro de nuevo usuario</string>
+    <string name="registerPlaceholderFirstName">First Name</string>
+    <string name="registerPlaceholderLastName">Last Name(s)</string>
+    <string name="registerPlaceholderEmail">Email</string>
 </resources>
