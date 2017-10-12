@@ -33,10 +33,10 @@ public class RegisterPresenter implements RegisterContract.Presenter {
 
         //show toast
         final Activity _activity = (Activity)mRegisterView;
-
         Toast toast = Toast.makeText(_activity.getApplicationContext(), "Usuario registrado", Toast.LENGTH_LONG);
         toast.show();
 
+        //go to login page
         final Intent _intent = new Intent(_activity, LoginActivity.class);
         _activity.startActivity(_intent);
         _activity.finish();

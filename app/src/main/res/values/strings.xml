@@ -12,4 +12,6 @@
     <string name="registerPlaceholderFirstName">First Name</string>
     <string name="registerPlaceholderLastName">Last Name(s)</string>
     <string name="registerPlaceholderEmail">Email</string>
+
+    <string name="homeServicesTitle">Mis Servicios</string>
 </resources>
