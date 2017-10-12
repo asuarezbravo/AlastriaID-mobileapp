@@ -2,16 +2,27 @@
     <string name="app_name">Alastria ID</string>
 
     <string name="loginTitle">Acceso</string>
-    <string name="loginPlaceholderEmail">Enter your email</string>
-    <string name="loginPlaceholderPIN">Enter your PIN</string>
-    <string name="loginBtnLogin">Sign in</string>
-    <string name="loginBtnRegister">Register</string>
-    <string name="loginLblObtainPIN">I don\'t have a PIN</string>
+    <string name="loginPlaceholderEmail">Introduce tu email</string>
+    <string name="loginPlaceholderPIN">Introduce tu PIN</string>
+    <string name="loginBtnLogin">Entrar</string>
+    <string name="loginBtnRegister">Nuevo usuario</string>
+    <string name="loginLblObtainPIN">No tengo PIN</string>
+
+    <string name="loginErrorEmail">Introduce un email valido.</string>
+    <string name="loginErrorPin">Introduce un PIN valido.</string>
 
     <string name="registerTitle">Registro de nuevo usuario</string>
-    <string name="registerPlaceholderFirstName">First Name</string>
-    <string name="registerPlaceholderLastName">Last Name(s)</string>
+    <string name="registerPlaceholderFirstName">Nombre</string>
+    <string name="registerPlaceholderLastName">Apellido(s)</string>
     <string name="registerPlaceholderEmail">Email</string>
+    <string name="registerPlaceholderPhone">Telefono</string>
+    <string name="registerPlaceholderDni">DNI</string>
+
+    <string name="registerErrorEmail">Email no valido.</string>
+    <string name="registerErrorFirstName">Nombre no valido.</string>
+    <string name="registerErrorLastName">Apellido(s) no valido.</string>
+    <string name="registerErrorPhone">Telefono no valido.</string>
+    <string name="registerErrorDni">DNI no valido.</string>
 
     <string name="homeServicesTitle">Mis Servicios</string>
 </resources>

@@ -27,12 +27,13 @@ public class RegisterActivity extends AppCompatActivity implements RegisterContr
         final EditText _txtFirstName = (EditText)findViewById(R.id.txtFirstName);
         final EditText _txtLastName = (EditText)findViewById(R.id.txtLastName);
         final EditText _txtEmail = (EditText)findViewById(R.id.txtEmail);
-        final EditText _txtPIN = (EditText)findViewById(R.id.txtPIN);
+        final EditText _txtPhone = (EditText)findViewById(R.id.txtPhoneNumber);
+        final EditText _txtDni = (EditText)findViewById(R.id.txtDni);
 
         final Button _btnRegister = (Button)findViewById(R.id.btnRegister);
         _btnRegister.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mRegisterPresenter.registerNewUser(_txtFirstName.getText().toString(), _txtLastName.getText().toString(), _txtEmail.getText().toString());
+                mRegisterPresenter.registerNewUser(_txtFirstName.getText().toString(), _txtLastName.getText().toString(), _txtEmail.getText().toString(), _txtPhone.getText().toString(), _txtDni.getText().toString());
             }
         });
     }

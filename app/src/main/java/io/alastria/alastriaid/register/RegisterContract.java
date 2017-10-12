@@ -13,6 +13,6 @@ public interface RegisterContract {
     }
 
     interface Presenter extends BasePresenter {
-        void registerNewUser(String firstName, String lastName, String email);
+        void registerNewUser(String firstName, String lastName, String email, String phoneNumber, String dni);
     }
 }
