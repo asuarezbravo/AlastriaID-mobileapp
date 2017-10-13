@@ -17,12 +17,15 @@
     <string name="registerPlaceholderEmail">Email</string>
     <string name="registerPlaceholderPhone">Telefono</string>
     <string name="registerPlaceholderDni">DNI</string>
+    <string name="btnContinue">Continuar</string>
 
     <string name="registerErrorEmail">Email no valido.</string>
     <string name="registerErrorFirstName">Nombre no valido.</string>
     <string name="registerErrorLastName">Apellido(s) no valido.</string>
     <string name="registerErrorPhone">Telefono no valido.</string>
     <string name="registerErrorDni">DNI no valido.</string>
+
+    <string name="profileTitle">Modificar perfil</string>
 
     <string name="homeServicesTitle">Mis Servicios</string>
 </resources>

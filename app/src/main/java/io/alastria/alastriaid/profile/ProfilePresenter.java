@@ -1,14 +1,11 @@
-package io.alastria.alastriaid.register;
+package io.alastria.alastriaid.profile;
 
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 
 import io.alastria.alastriaid.R;
 import io.alastria.alastriaid.home.HomeActivity;
-import io.alastria.alastriaid.login.LoginActivity;
 import io.alastria.alastriaid.model.Model;
 import io.alastria.alastriaid.model.Person;
 import io.alastria.alastriaid.util.Utils;
@@ -17,24 +14,23 @@ import io.alastria.alastriaid.util.Utils;
  * Created by Alvaro Suarez on 05/10/2017.
  */
 
-public class RegisterPresenter implements RegisterContract.Presenter {
+public class ProfilePresenter implements ProfileContract.Presenter {
 
-    private RegisterContract.View mRegisterView;
+    private ProfileContract.View mProfileView;
+    private Model mModel;
 
 
-    public RegisterPresenter(RegisterContract.View registerView) {
-        mRegisterView = registerView;
+    public ProfilePresenter(ProfileContract.View profileView) {
+        mProfileView = profileView;
     }
 
     @Override
-    public void registerNewUser(String firstName, String lastName, String email, String phoneNumber, String dni) {
-        //TODO: implement register
+    public void saveUser(String firstName, String lastName, String email, String phoneNumber, String dni) {        //TODO: implement register
+
+
         if(validateForm( firstName, lastName, email, phoneNumber, dni)) {
 
-            //for testing
-            Model _model = Model.getInstance();
-
-            Person _person = _model.getPerson();
+            Person _person = mModel.getPerson();
             _person.setEmail(email);
             _person.setFirstName(firstName);
             _person.setLastName(lastName);
@@ -42,8 +38,8 @@ public class RegisterPresenter implements RegisterContract.Presenter {
             _person.setDNI(dni);
 
             //show toast
-            final Activity _activity = (Activity) mRegisterView;
-            Utils.ShowToast("Nuevo usuario creado", _activity);
+            final Activity _activity = (Activity) mProfileView;
+            Utils.ShowToast("Usuario guardado", _activity);
 
             //go to home page
             final Intent _intent = new Intent(_activity, HomeActivity.class);
@@ -53,7 +49,7 @@ public class RegisterPresenter implements RegisterContract.Presenter {
     }
 
     public boolean validateForm(String firstName, String lastName, String email, String phoneNumber, String dni){
-        final Activity _activity = (Activity)mRegisterView;
+        final Activity _activity = (Activity) mProfileView;
 
         String _error = "";
         if(email==null || email.isEmpty())
@@ -76,5 +72,8 @@ public class RegisterPresenter implements RegisterContract.Presenter {
     }
     @Override
     public void start() {
+        mModel = Model.getInstance();
+        final Person _person = mModel.getPerson();
+        mProfileView.populateProfile(_person.getFirstName(), _person.getLastName(), _person.getEmail(), _person.getPhoneNumber(), _person.getDNI());
     }
 }

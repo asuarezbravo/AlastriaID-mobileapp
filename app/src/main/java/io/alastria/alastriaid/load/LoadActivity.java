@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import io.alastria.alastriaid.R;
 import io.alastria.alastriaid.home.HomeActivity;
+import io.alastria.alastriaid.login.LoginActivity;
 
 /**
  * Created by Alvaro Suarez on 05/10/2017.
@@ -19,16 +20,16 @@ public class LoadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load);
 
-        final Intent intent = new Intent(this, HomeActivity.class);
+        final Intent _intent = new Intent(this, LoginActivity.class);
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
+//        Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
 
-                startActivity(intent);
+                startActivity(_intent);
                 finish();
-            }
-        }, 3000);
+//            }
+//        }, 3000);
     }
 }
