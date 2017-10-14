@@ -6,9 +6,16 @@ Mockup with main functionality can be found here:  https://app.moqups.com/alvaro
 
 ## Architectural Pattern
 This app has been implemented using the Model-View-Presenter pattern (MVP). This architectural pattern has 3 players:
+
+ [![N|Solid](https://cdn-images-1.medium.com/max/800/1*3JERTTFmC35Rhx-C0uvECA.png)]
+ 
  - *Model*: it is an interface responsible for managing data. 
  - *Presenter*: the presenter is the middle-man between model and view. All the presentation logic belongs to it. The presenter is responsible for querying the model and updating the view, reacting to user interactions updating the model.
  - *View*: it is only responsible for presenting data in a way decided by the presenter. 
+ 
+ 
+ Read this article for more information in regards to this pattern:
+ https://medium.com/@cervonefrancesco/model-view-presenter-android-guidelines-94970b430ddf
  
  ## Java and Android Naming Conventions
 Readability of Java code is important because it means less time is spent trying to figure out what the code does, leaving more time to fix or modify it. Let's try to adhere to most common Java and Android code and naming conventions. Some basic rules:
