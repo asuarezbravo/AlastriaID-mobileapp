@@ -36,18 +36,18 @@ public class HorizontalServiceListViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View _view = inflater.inflate(R.layout.fragment_horizontal_service_list_view, container, false);
+        View view = inflater.inflate(R.layout.fragment_horizontal_service_list_view, container, false);
 
-        mRecyclerView = (RecyclerView) _view.findViewById(R.id.cardView);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.cardView);
         mRecyclerView.setHasFixedSize(true);
-        LinearLayoutManager _myLayoutManager = new LinearLayoutManager(getActivity());
-        _myLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        LinearLayoutManager myLayoutManager = new LinearLayoutManager(getActivity());
+        myLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         if (mListServices.size() > 0 & mRecyclerView != null) {
             mRecyclerView.setAdapter(new MyAdapter(mListServices));
         }
-        mRecyclerView.setLayoutManager(_myLayoutManager);
+        mRecyclerView.setLayoutManager(myLayoutManager);
 
-        return _view;
+        return view;
     }
 
     @Override
@@ -70,10 +70,10 @@ public class HorizontalServiceListViewFragment extends Fragment {
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent,int viewType) {
             // create a new view
-            View _view = LayoutInflater.from(parent.getContext())
+            View view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.service_list_items, parent, false);
-            MyViewHolder _holder = new MyViewHolder(_view);
-            return _holder;
+            MyViewHolder holder = new MyViewHolder(view);
+            return holder;
         }
 
         @Override

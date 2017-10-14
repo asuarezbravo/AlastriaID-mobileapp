@@ -26,16 +26,16 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
         mProfilePresenter = new ProfilePresenter(this);
         mProfilePresenter.start();
 
-        final EditText _txtFirstName = (EditText)findViewById(R.id.txtFirstName);
-        final EditText _txtLastName = (EditText)findViewById(R.id.txtLastName);
-        final EditText _txtEmail = (EditText)findViewById(R.id.txtEmail);
-        final EditText _txtPhone = (EditText)findViewById(R.id.txtPhoneNumber);
-        final EditText _txtDni = (EditText)findViewById(R.id.txtDni);
+        final EditText txtFirstName = (EditText)findViewById(R.id.txtFirstName);
+        final EditText txtLastName = (EditText)findViewById(R.id.txtLastName);
+        final EditText txtEmail = (EditText)findViewById(R.id.txtEmail);
+        final EditText txtPhone = (EditText)findViewById(R.id.txtPhoneNumber);
+        final EditText txtDni = (EditText)findViewById(R.id.txtDni);
 
-        final Button _btnRegister = (Button)findViewById(R.id.btnRegister);
-        _btnRegister.setOnClickListener(new View.OnClickListener() {
+        final Button btnRegister = (Button)findViewById(R.id.btnRegister);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mProfilePresenter.saveUser(_txtFirstName.getText().toString(), _txtLastName.getText().toString(), _txtEmail.getText().toString(), _txtPhone.getText().toString(), _txtDni.getText().toString());
+                mProfilePresenter.saveUser(txtFirstName.getText().toString(), txtLastName.getText().toString(), txtEmail.getText().toString(), txtPhone.getText().toString(), txtDni.getText().toString());
             }
         });
     }

@@ -14,18 +14,18 @@ import io.alastria.alastriaid.R;
 
 public class Utils {
     public static void ShowToast(String message, Activity activity){
-        Toast _toast = Toast.makeText(activity.getApplicationContext(), message, Toast.LENGTH_LONG);
-        _toast.show();
+        Toast toast = Toast.makeText(activity.getApplicationContext(), message, Toast.LENGTH_LONG);
+        toast.show();
     }
 
     public static void ShowErrorToast(String message, Activity activity){
-        Toast _toast = Toast.makeText(activity.getApplicationContext(), message, Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(activity.getApplicationContext(), message, Toast.LENGTH_LONG);
         //TODO: change background and font color
-        //View _v = (View) _toast.getView();
-        //_v.setBackgroundColor(Color.RED);
-        //TextView _tv = (TextView) _v.findViewById(android.R.id.message);
-        //_tv.setTextColor(Color.WHITE);
-        //_tv.setBackgroundColor(Color.RED);
-        _toast.show();
+        //View v = (View) toast.getView();
+        //v.setBackgroundColor(Color.RED);
+        //TextView tv = (TextView) v.findViewById(android.R.id.message);
+        //tv.setTextColor(Color.WHITE);
+        //tv.setBackgroundColor(Color.RED);
+        toast.show();
     }
 }

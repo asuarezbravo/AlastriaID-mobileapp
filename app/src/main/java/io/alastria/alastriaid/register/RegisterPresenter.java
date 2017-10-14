@@ -21,7 +21,6 @@ public class RegisterPresenter implements RegisterContract.Presenter {
 
     private RegisterContract.View mRegisterView;
 
-
     public RegisterPresenter(RegisterContract.View registerView) {
         mRegisterView = registerView;
     }
@@ -32,48 +31,49 @@ public class RegisterPresenter implements RegisterContract.Presenter {
         if(validateForm( firstName, lastName, email, phoneNumber, dni)) {
 
             //for testing
-            Model _model = Model.getInstance();
+            Model model = Model.getInstance();
 
-            Person _person = _model.getPerson();
-            _person.setEmail(email);
-            _person.setFirstName(firstName);
-            _person.setLastName(lastName);
-            _person.setPhoneNumber(phoneNumber);
-            _person.setDNI(dni);
+            Person person = model.getPerson();
+            person.setEmail(email);
+            person.setFirstName(firstName);
+            person.setLastName(lastName);
+            person.setPhoneNumber(phoneNumber);
+            person.setDNI(dni);
 
             //show toast
-            final Activity _activity = (Activity) mRegisterView;
-            Utils.ShowToast("Nuevo usuario creado", _activity);
+            final Activity activity = (Activity) mRegisterView;
+            Utils.ShowToast("Nuevo usuario creado", activity);
 
             //go to home page
-            final Intent _intent = new Intent(_activity, HomeActivity.class);
-            _activity.startActivity(_intent);
-            _activity.finish();
+            final Intent intent = new Intent(activity, HomeActivity.class);
+            activity.startActivity(intent);
+            activity.finish();
         }
     }
 
     public boolean validateForm(String firstName, String lastName, String email, String phoneNumber, String dni){
-        final Activity _activity = (Activity)mRegisterView;
+        final Activity activity = (Activity)mRegisterView;
 
-        String _error = "";
+        String error = "";
         if(email==null || email.isEmpty())
-            _error = _activity.getString(R.string.registerErrorEmail);
+            error = activity.getString(R.string.registerErrorEmail);
         else if(lastName==null || lastName.isEmpty())
-            _error = _activity.getString(R.string.registerErrorFirstName);
+            error = activity.getString(R.string.registerErrorFirstName);
         else if(email==null || email.isEmpty())
-            _error = _activity.getString(R.string.registerErrorLastName);
+            error = activity.getString(R.string.registerErrorLastName);
         else if(phoneNumber==null || phoneNumber.isEmpty())
-            _error = _activity.getString(R.string.registerErrorPhone);
+            error = activity.getString(R.string.registerErrorPhone);
         else if(dni==null || dni.isEmpty())
-            _error = _activity.getString(R.string.registerErrorDni);
+            error = activity.getString(R.string.registerErrorDni);
 
-        if(!_error.isEmpty()) {
-            Utils.ShowErrorToast(_error, _activity);
+        if(!error.isEmpty()) {
+            Utils.ShowErrorToast(error, activity);
             return false;
         }
         else
             return true;
     }
+
     @Override
     public void start() {
     }

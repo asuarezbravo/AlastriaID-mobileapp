@@ -20,8 +20,8 @@ public class HomePresenter implements HomeContract.Presenter {
     @Override
     public void start() {
         mModel = Model.getInstance();
-        final Person _person = mModel.getPerson();
-        mHomeView.displayProfile(_person.getFirstName(), _person.getLastName(), _person.getEmail(), _person.getPhoneNumber(), _person.getDNI());
+        final Person person = mModel.getPerson();
+        mHomeView.displayProfile(person.getFirstName(), person.getLastName(), person.getEmail(), person.getPhoneNumber(), person.getDNI());
         mHomeView.displayServices(mModel.getServices());
     }
 }

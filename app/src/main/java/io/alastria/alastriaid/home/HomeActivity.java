@@ -36,14 +36,14 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
         mHomePresenter = new HomePresenter(this);
         mHomePresenter.start();
 
-        final Activity _activity = this;
+        final Activity activity = this;
 
-        final FloatingActionButton _btnModifyProfile = (FloatingActionButton)findViewById(R.id.btnModifyProfile);
-        _btnModifyProfile.setOnClickListener(new View.OnClickListener() {
+        final FloatingActionButton btnModifyProfile = (FloatingActionButton)findViewById(R.id.btnModifyProfile);
+        btnModifyProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //go to modify profile page
-                final Intent _intent = new Intent(_activity, ProfileActivity.class);
-                startActivity(_intent);
+                final Intent intent = new Intent(activity, ProfileActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
@@ -64,15 +64,15 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
 
     @Override
     public void displayServices(ArrayList<Service> services){
-        FragmentManager _fm = getSupportFragmentManager();
-        Fragment _fragment = _fm.findFragmentById(R.id.fragmentContainer);
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
 
-        if (_fragment == null) {
-            _fragment = new HorizontalServiceListViewFragment();
-            ((HorizontalServiceListViewFragment)_fragment).setListServices(services);
+        if (fragment == null) {
+            fragment = new HorizontalServiceListViewFragment();
+            ((HorizontalServiceListViewFragment)fragment).setListServices(services);
 
-            _fm.beginTransaction()
-                    .add(R.id.fragmentContainer, _fragment)
+            fm.beginTransaction()
+                    .add(R.id.fragmentContainer, fragment)
                     .commit();
         }
     }

@@ -24,18 +24,18 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
         mLoginPresenter = new LoginPresenter(this);
 
-        final EditText _txtEmail = (EditText)findViewById(R.id.txtEmail);
-        final EditText _txtPIN = (EditText)findViewById(R.id.txtPIN);
+        final EditText txtEmail = (EditText)findViewById(R.id.txtEmail);
+        final EditText txtPIN = (EditText)findViewById(R.id.txtPIN);
 
-        final Button _btnLogin = (Button)findViewById(R.id.btnLogin);
-        _btnLogin.setOnClickListener(new View.OnClickListener() {
+        final Button btnLogin = (Button)findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mLoginPresenter.login(_txtEmail.getText().toString(), _txtPIN.getText().toString());
+                mLoginPresenter.login(txtEmail.getText().toString(), txtPIN.getText().toString());
             }
         });
 
-        final Button _btnRegister = (Button)findViewById(R.id.btnRegister);
-        _btnRegister.setOnClickListener(new View.OnClickListener() {
+        final Button btnRegister = (Button)findViewById(R.id.btnRegister);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 mLoginPresenter.register();
             }

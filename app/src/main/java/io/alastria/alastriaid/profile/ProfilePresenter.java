@@ -25,55 +25,56 @@ public class ProfilePresenter implements ProfileContract.Presenter {
     }
 
     @Override
-    public void saveUser(String firstName, String lastName, String email, String phoneNumber, String dni) {        //TODO: implement register
-
+    public void saveUser(String firstName, String lastName, String email, String phoneNumber, String dni) {
 
         if(validateForm( firstName, lastName, email, phoneNumber, dni)) {
 
-            Person _person = mModel.getPerson();
-            _person.setEmail(email);
-            _person.setFirstName(firstName);
-            _person.setLastName(lastName);
-            _person.setPhoneNumber(phoneNumber);
-            _person.setDNI(dni);
+            //TODO: implement register
+            Person person = mModel.getPerson();
+            person.setEmail(email);
+            person.setFirstName(firstName);
+            person.setLastName(lastName);
+            person.setPhoneNumber(phoneNumber);
+            person.setDNI(dni);
 
             //show toast
-            final Activity _activity = (Activity) mProfileView;
-            Utils.ShowToast("Usuario guardado", _activity);
+            final Activity activity = (Activity) mProfileView;
+            Utils.ShowToast("Usuario guardado", activity);
 
             //go to home page
-            final Intent _intent = new Intent(_activity, HomeActivity.class);
-            _activity.startActivity(_intent);
-            _activity.finish();
+            final Intent intent = new Intent(activity, HomeActivity.class);
+            activity.startActivity(intent);
+            activity.finish();
         }
     }
 
     public boolean validateForm(String firstName, String lastName, String email, String phoneNumber, String dni){
-        final Activity _activity = (Activity) mProfileView;
+        final Activity activity = (Activity) mProfileView;
 
-        String _error = "";
+        String error = "";
         if(email==null || email.isEmpty())
-            _error = _activity.getString(R.string.registerErrorEmail);
+            error = activity.getString(R.string.registerErrorEmail);
         else if(lastName==null || lastName.isEmpty())
-            _error = _activity.getString(R.string.registerErrorFirstName);
+            error = activity.getString(R.string.registerErrorFirstName);
         else if(email==null || email.isEmpty())
-            _error = _activity.getString(R.string.registerErrorLastName);
+            error = activity.getString(R.string.registerErrorLastName);
         else if(phoneNumber==null || phoneNumber.isEmpty())
-            _error = _activity.getString(R.string.registerErrorPhone);
+            error = activity.getString(R.string.registerErrorPhone);
         else if(dni==null || dni.isEmpty())
-            _error = _activity.getString(R.string.registerErrorDni);
+            error = activity.getString(R.string.registerErrorDni);
 
-        if(!_error.isEmpty()) {
-            Utils.ShowErrorToast(_error, _activity);
+        if(!error.isEmpty()) {
+            Utils.ShowErrorToast(error, activity);
             return false;
         }
         else
             return true;
     }
+
     @Override
     public void start() {
         mModel = Model.getInstance();
-        final Person _person = mModel.getPerson();
-        mProfileView.populateProfile(_person.getFirstName(), _person.getLastName(), _person.getEmail(), _person.getPhoneNumber(), _person.getDNI());
+        final Person person = mModel.getPerson();
+        mProfileView.populateProfile(person.getFirstName(), person.getLastName(), person.getEmail(), person.getPhoneNumber(), person.getDNI());
     }
 }

@@ -30,33 +30,33 @@ public class LoginPresenter implements LoginContract.Presenter {
     @Override
     public void login(String email, String pin) {
 
-        final Activity _activity = (Activity)mLoginView;
+        final Activity activity = (Activity)mLoginView;
 
-        String _error = "";
+        String error = "";
         if(email==null || email.isEmpty())
-            _error = _activity.getString(R.string.loginErrorEmail);
+            error = activity.getString(R.string.loginErrorEmail);
         else if(pin==null || pin.isEmpty())
-            _error = _activity.getString(R.string.loginErrorPin);
+            error = activity.getString(R.string.loginErrorPin);
 
-        if(!_error.isEmpty()) {
-            Utils.ShowErrorToast(_error, _activity);
+        if(!error.isEmpty()) {
+            Utils.ShowErrorToast(error, activity);
             return;
         }
 
         //TODO: implement login
         Model.getInstance().getPerson().setEmail(email);//for testing
 
-        final Intent _intent = new Intent(_activity, HomeActivity.class);
-        _activity.startActivity(_intent);
-        _activity.finish();
+        final Intent intent = new Intent(activity, HomeActivity.class);
+        activity.startActivity(intent);
+        activity.finish();
     }
 
     @Override
     public void register() {
-        final Activity _activity = (Activity)mLoginView;
-        final Intent _intent = new Intent(_activity, RegisterActivity.class);
-        _activity.startActivity(_intent);
-        _activity.finish();
+        final Activity activity = (Activity)mLoginView;
+        final Intent intent = new Intent(activity, RegisterActivity.class);
+        activity.startActivity(intent);
+        activity.finish();
     }
 
     @Override

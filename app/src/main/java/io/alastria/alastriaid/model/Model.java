@@ -1,7 +1,6 @@
 package io.alastria.alastriaid.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import io.alastria.alastriaid.R;
 
@@ -13,33 +12,30 @@ public class Model {
 
     public static final String FILENAME = "model.dat";
 
-    private static Person mPerson;
-    private static ArrayList<Service> mServices;
+    private Person mPerson;
+    private ArrayList<Service> mServices;
 
-    private static Model mInstance; //singleton pattern
+    private static Model sInstance; //singleton pattern
 
     private Model(){
-        mPerson = new Person();
+
+        //dummy data
+        mPerson = new Person("test@gmail.com", "Pedro", "Sanchez Rodriguez", "655098765", "12345678Q");
+
         mServices = new ArrayList<Service>();
+        mServices.add(new Service("Banco A", R.drawable.bank));
+        mServices.add(new Service("Gas", R.drawable.energy));
+        mServices.add(new Service("Banco B", R.drawable.bank));
+        mServices.add(new Service("La Paz", R.drawable.healthcare));
+        mServices.add(new Service("Gas", R.drawable.energy));
     }
 
     public static Model getInstance(){
-        if(mInstance == null) {
-            //retrieve from persistent data if exists. For now just testing with dummy data
-            // String _modelPath = Environment.getDataDirectory() + "/" + FILENAME;
-            mInstance = new Model();
-
-            mPerson = new Person("test@gmail.com", "Pedro", "Sanchez Rodriguez", "655098765", "12345678Q");
-
-            mServices = new ArrayList<Service>();
-            mServices.add(new Service("Banco A", R.drawable.bank));
-            mServices.add(new Service("Gas", R.drawable.energy));
-            mServices.add(new Service("Banco B", R.drawable.bank));
-            mServices.add(new Service("La Paz", R.drawable.healthcare));
-            mServices.add(new Service("Gas", R.drawable.energy));
+        if(sInstance == null) {
+            sInstance = new Model();
         }
 
-        return mInstance;
+        return sInstance;
     }
 
     public Person getPerson() {
