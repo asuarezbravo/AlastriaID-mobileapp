@@ -34,4 +34,4 @@ More information can be found here:
  - Java: http://www.oracle.com/technetwork/java/codeconventions-150003.pdf
  - Android: https://source.android.com/source/code-style#follow-field-naming-conventions
 
-
+Last but not least, please use English in your code and comments.
