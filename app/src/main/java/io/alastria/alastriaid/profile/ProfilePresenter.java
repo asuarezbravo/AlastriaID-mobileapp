@@ -19,7 +19,6 @@ public class ProfilePresenter implements ProfileContract.Presenter {
     private ProfileContract.View mProfileView;
     private Model mModel;
 
-
     public ProfilePresenter(ProfileContract.View profileView) {
         mProfileView = profileView;
     }
