@@ -28,6 +28,8 @@ public class ProfilePresenter implements ProfileContract.Presenter {
 
         if(validateForm( firstName, lastName, email, phoneNumber, dni)) {
 
+            final Activity activity = (Activity) mProfileView;
+
             //TODO: implement register
             Person person = mModel.getPerson();
             person.setEmail(email);
@@ -37,8 +39,7 @@ public class ProfilePresenter implements ProfileContract.Presenter {
             person.setDNI(dni);
 
             //show toast
-            final Activity activity = (Activity) mProfileView;
-            Utils.ShowToast("Usuario guardado", activity);
+            Utils.ShowToast(activity.getString(R.string.userSaved), activity);
 
             //go to home page
             final Intent intent = new Intent(activity, HomeActivity.class);
@@ -47,16 +48,17 @@ public class ProfilePresenter implements ProfileContract.Presenter {
         }
     }
 
+    @Override
     public boolean validateForm(String firstName, String lastName, String email, String phoneNumber, String dni){
         final Activity activity = (Activity) mProfileView;
 
         String error = "";
-        if(email==null || email.isEmpty())
-            error = activity.getString(R.string.registerErrorEmail);
-        else if(lastName==null || lastName.isEmpty())
+        if(firstName==null || firstName.isEmpty())
             error = activity.getString(R.string.registerErrorFirstName);
-        else if(email==null || email.isEmpty())
+        else if(lastName==null || lastName.isEmpty())
             error = activity.getString(R.string.registerErrorLastName);
+        else if(email==null || email.isEmpty())
+            error = activity.getString(R.string.registerErrorEmail);
         else if(phoneNumber==null || phoneNumber.isEmpty())
             error = activity.getString(R.string.registerErrorPhone);
         else if(dni==null || dni.isEmpty())

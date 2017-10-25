@@ -14,6 +14,7 @@ public interface ProfileContract {
     }
 
     interface Presenter extends BasePresenter {
+        boolean validateForm(String firstName, String lastName, String email, String phoneNumber, String dni);
         void saveUser(String firstName, String lastName, String email, String phoneNumber, String dni);
     }
 }

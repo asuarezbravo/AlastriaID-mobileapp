@@ -13,6 +13,7 @@ public interface RegisterContract {
     }
 
     interface Presenter extends BasePresenter {
+        boolean validateForm(String firstName, String lastName, String email, String phoneNumber, String dni);
         void registerNewUser(String firstName, String lastName, String email, String phoneNumber, String dni);
     }
 }

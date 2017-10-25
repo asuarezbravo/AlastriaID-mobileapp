@@ -28,4 +28,11 @@
     <string name="profileTitle">Modificar perfil</string>
 
     <string name="homeServicesTitle">Mis Servicios</string>
+    <string name="enterPIN">Introduce PIN</string>
+
+
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+
+    <string name="userSaved">Usuario guardado con exito</string>
 </resources>

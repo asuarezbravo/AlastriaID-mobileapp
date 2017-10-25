@@ -55,12 +55,12 @@ public class RegisterPresenter implements RegisterContract.Presenter {
         final Activity activity = (Activity)mRegisterView;
 
         String error = "";
-        if(email==null || email.isEmpty())
-            error = activity.getString(R.string.registerErrorEmail);
-        else if(lastName==null || lastName.isEmpty())
+        if(firstName==null || firstName.isEmpty())
             error = activity.getString(R.string.registerErrorFirstName);
-        else if(email==null || email.isEmpty())
+        else if(lastName==null || lastName.isEmpty())
             error = activity.getString(R.string.registerErrorLastName);
+        else if(email==null || email.isEmpty())
+            error = activity.getString(R.string.registerErrorEmail);
         else if(phoneNumber==null || phoneNumber.isEmpty())
             error = activity.getString(R.string.registerErrorPhone);
         else if(dni==null || dni.isEmpty())
