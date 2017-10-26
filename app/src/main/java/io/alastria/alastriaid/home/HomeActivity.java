@@ -44,7 +44,6 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
                 //go to modify profile page
                 final Intent intent = new Intent(activity, ProfileActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

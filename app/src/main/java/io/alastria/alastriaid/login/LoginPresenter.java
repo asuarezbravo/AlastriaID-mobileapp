@@ -56,7 +56,6 @@ public class LoginPresenter implements LoginContract.Presenter {
         final Activity activity = (Activity)mLoginView;
         final Intent intent = new Intent(activity, RegisterActivity.class);
         activity.startActivity(intent);
-        activity.finish();
     }
 
     @Override
